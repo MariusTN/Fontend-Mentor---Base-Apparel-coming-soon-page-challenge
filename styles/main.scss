@@ -1,3 +1,197 @@
 @import 'global';
 @import 'variables';
 
+.container {
+    display: flex;
+    height: 100vh;
+
+    .left {
+        padding: 0 40px 40px;
+        width: 60%;
+        background-image: url(/images/bg-pattern-desktop.svg);
+        background-size: cover;
+
+    .cont-inner{
+        max-width: 55rem;
+        margin: auto;
+    }
+
+    }
+
+    .bg-image {
+        background: url(/images/hero-desktop.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 40%;
+    }
+
+    .right{
+        width: 40%;
+    }
+
+    .bg-mobile {
+        display: none;
+    }
+
+    .logo {
+        margin: 6rem 0rem;
+        width: 20rem;
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+.text {
+    max-width: 44rem;
+
+    h1 {
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: uppercase;
+        font-size: $header;
+        letter-spacing: 1rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 0;
+        color: $darkgrayred;
+        opacity: 0;
+        animation: appear 2s ease forwards;
+
+        span {
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+            color: $desaturatedred;
+        }
+    }
+
+    p {
+        line-height: 2.6rem;
+        font-size: 1.6rem;
+        color: $desaturatedred;
+        margin: 3rem 0;
+        opacity: 0;
+        animation: appear 1.7s ease-in-out forwards 0.5s;
+    }
+
+}
+
+form {
+    position: relative;
+    max-width: 44rem;
+    opacity: 0;
+    animation: appear 2.7s ease-in-out forwards 0.5s;
+
+    input {
+        background-color: transparent;
+        border: 2px solid $desaturatedred;
+        padding: 1.5rem 3rem;
+        border-radius: 5rem;
+        width: 100%;
+        height: 5.5rem;
+        font-size: 1.6rem;
+
+        &:focus {
+            outline: none;
+            box-shadow: 3px 4px 4px rgba($color: $desaturatedred, $alpha: 0.8);
+            border-width: 3px;
+        }
+
+        &::placeholder {
+            color: $desaturatedred;
+        }
+
+    
+    }
+
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: $gradient2;
+        padding: 1.5rem;
+        border: none;
+        border-radius: 5rem;
+        width: 100px;
+        transform: opacity 0.2s ease;
+        box-shadow: 2px 5px 5px rgba($color: $desaturatedred, $alpha: 0.5);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.6;
+
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    small {
+        font-size: 1.6rem;
+        margin-top: 1.5rem;
+        display: none;
+        margin-left: 3rem;
+        color: $softred;
+    }
+
+    .error-icon {
+        display: none;
+        position: absolute;
+        top: 1.45rem;
+        right: 12rem;
+    }
+
+    &.error {
+
+        input {
+            border: 2px solid $softred;
+        }
+
+        .error-icon {
+            display: block;
+        }
+
+        small {
+            display: block;
+        }
+    }
+    &.success input{
+        border: 2px solid $desaturatedred;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        .logo{
+            margin: 3rem 0;
+            width: 10rem;
+        }
+
+        .left {
+            width: 100%;
+        }
+
+        .text{
+            
+            margin-top: 4rem;
+
+            .h1{
+                font-size: 3rem;
+            }
+        }
+
+        .bg-image {
+            display: none;
+        }
+
+        .bg-mobile {
+            display: block;
+            margin: 0 -4rem 4rem -4rem;
+            width: calc(100% + 80px);
+        }
+    }
+}

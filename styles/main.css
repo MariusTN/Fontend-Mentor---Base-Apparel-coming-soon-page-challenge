@@ -11,8 +11,212 @@ html {
 
 body {
   font-family: "Josephin Sans", sans-serif;
-  font-weight: 400;
+  margin: 0;
+  background-image: linear-gradient(135deg, white, #fff5f5);
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.container .left {
+  padding: 0 40px 40px;
+  width: 60%;
+  background-image: url(/images/bg-pattern-desktop.svg);
+  background-size: cover;
+}
+
+.container .left .cont-inner {
+  max-width: 55rem;
+  margin: auto;
+}
+
+.container .bg-image {
+  background: url(/images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 40%;
+}
+
+.container .right {
+  width: 40%;
+}
+
+.container .bg-mobile {
+  display: none;
+}
+
+.container .logo {
+  margin: 6rem 0rem;
+  width: 20rem;
+}
+
+@-webkit-keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+.text {
+  max-width: 44rem;
+}
+
+.text h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: calc(3.5rem + 1vw);
+  letter-spacing: 1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0;
+  color: #413a3a;
+  opacity: 0;
+  -webkit-animation: appear 2s ease forwards;
+          animation: appear 2s ease forwards;
+}
+
+.text h1 span {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  color: #ce9797;
+}
+
+.text p {
+  line-height: 2.6rem;
   font-size: 1.6rem;
   color: #ce9797;
+  margin: 3rem 0;
+  opacity: 0;
+  -webkit-animation: appear 1.7s ease-in-out forwards 0.5s;
+          animation: appear 1.7s ease-in-out forwards 0.5s;
+}
+
+form {
+  position: relative;
+  max-width: 44rem;
+  opacity: 0;
+  -webkit-animation: appear 2.7s ease-in-out forwards 0.5s;
+          animation: appear 2.7s ease-in-out forwards 0.5s;
+}
+
+form input {
+  background-color: transparent;
+  border: 2px solid #ce9797;
+  padding: 1.5rem 3rem;
+  border-radius: 5rem;
+  width: 100%;
+  height: 5.5rem;
+  font-size: 1.6rem;
+}
+
+form input:focus {
+  outline: none;
+  -webkit-box-shadow: 3px 4px 4px rgba(206, 151, 151, 0.8);
+          box-shadow: 3px 4px 4px rgba(206, 151, 151, 0.8);
+  border-width: 3px;
+}
+
+form input::-webkit-input-placeholder {
+  color: #ce9797;
+}
+
+form input:-ms-input-placeholder {
+  color: #ce9797;
+}
+
+form input::-ms-input-placeholder {
+  color: #ce9797;
+}
+
+form input::placeholder {
+  color: #ce9797;
+}
+
+form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  padding: 1.5rem;
+  border: none;
+  border-radius: 5rem;
+  width: 100px;
+  -webkit-transform: opacity 0.2s ease;
+          transform: opacity 0.2s ease;
+  -webkit-box-shadow: 2px 5px 5px rgba(206, 151, 151, 0.5);
+          box-shadow: 2px 5px 5px rgba(206, 151, 151, 0.5);
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.6;
+}
+
+form button:focus {
+  outline: none;
+}
+
+form small {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  display: none;
+  margin-left: 3rem;
+  color: #f96262;
+}
+
+form .error-icon {
+  display: none;
+  position: absolute;
+  top: 1.45rem;
+  right: 12rem;
+}
+
+form.error input {
+  border: 2px solid #f96262;
+}
+
+form.error .error-icon {
+  display: block;
+}
+
+form.error small {
+  display: block;
+}
+
+form.success input {
+  border: 2px solid #ce9797;
+}
+
+@media screen and (max-width: 600px) {
+  .container .logo {
+    margin: 3rem 0;
+    width: 10rem;
+  }
+  .container .left {
+    width: 100%;
+  }
+  .container .text {
+    margin-top: 4rem;
+  }
+  .container .text .h1 {
+    font-size: 3rem;
+  }
+  .container .bg-image {
+    display: none;
+  }
+  .container .bg-mobile {
+    display: block;
+    margin: 0 -4rem 4rem -4rem;
+    width: calc(100% + 80px);
+  }
 }
 /*# sourceMappingURL=main.css.map */
