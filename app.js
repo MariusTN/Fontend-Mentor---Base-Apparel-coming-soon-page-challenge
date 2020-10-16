@@ -26,7 +26,6 @@ form.addEventListener('submit', e => {
             }, 5000);
         }
 });
-    setInterval()
 
 
 function validateEmail(email) {
